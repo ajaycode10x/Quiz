@@ -6,15 +6,15 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background */
+    background: linear-gradient(to right, #ff8c00, #f2f2f2); /* New gradient background */
     animation: gradientAnimation 10s ease infinite; /* Moving gradient effect */
 }
 
 /* Animating background gradient */
 @keyframes gradientAnimation {
-    0% { background: linear-gradient(to right, #00c6ff, #0072ff); }
-    50% { background: linear-gradient(to right, #f5af19, #f12711); }
-    100% { background: linear-gradient(to right, #00c6ff, #0072ff); }
+    0% { background: linear-gradient(to right, #ff8c00, #f2f2f2); }
+    50% { background: linear-gradient(to right, #ff0080, #ff8c00); }
+    100% { background: linear-gradient(to right, #ff8c00, #f2f2f2); }
 }
 
 /* Quiz container styling */
@@ -36,10 +36,11 @@ body {
 
 /* Question styling */
 #question {
-    font-size: 1.4em;
+    font-family: 'Arial', sans-serif; /* Updated font for a stronger look */
+    font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 25px;
-    color: #333;
+    color: #2c3e50; /* Darker color for better contrast */
     animation: fadeIn 1s ease-in-out; /* Fade-in effect */
 }
 
@@ -55,7 +56,7 @@ body {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
-    background-color: #007bff;
+    background-color: #3498db; /* New color */
     color: white;
     border: none;
     border-radius: 8px;
@@ -66,7 +67,7 @@ body {
 
 /* Hover effects for option buttons */
 .option-btn:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
     transform: scale(1.05); /* Slight zoom effect */
 }
 
@@ -79,7 +80,7 @@ body {
 #next-btn {
     margin-top: 30px;
     padding: 12px 25px;
-    background-color: #28a745;
+    background-color: #e67e22; /* New color */
     color: white;
     border: none;
     border-radius: 8px;
@@ -90,7 +91,7 @@ body {
 
 /* Hover effect for next button */
 #next-btn:hover {
-    background-color: #218838;
+    background-color: #d35400;
     transform: scale(1.05);
 }
 
