@@ -39,12 +39,16 @@ function checkAnswer(selectedOptionIndex) {
     const selectedOption = document.querySelectorAll(".option-btn")[selectedOptionIndex];
     const resultText = document.getElementById("result");
 
-    // Show the correct answer message
+    // Check if the selected option is correct
     if (selectedOption.dataset.correct === "true") {
         resultText.innerText = "Correct!";
     } else {
         resultText.innerText = "Incorrect, try again.";
     }
+
+    // Show the correct answer from the JSON
+    const questionObj = questions[currentQuestionIndex];
+    resultText.innerText += ` The correct answer is: ${questionObj.options[questionObj.answer === "A" ? 0 : questionObj.answer === "B" ? 1 : questionObj.answer === "C" ? 2 : 3]}`;
 
     // Disable buttons after answer is selected
     const optionButtons = document.querySelectorAll(".option-btn");
