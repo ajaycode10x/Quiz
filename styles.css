@@ -1,54 +1,114 @@
-
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f5f5f5;
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background */
+    animation: gradientAnimation 10s ease infinite; /* Moving gradient effect */
 }
 
+/* Animating background gradient */
+@keyframes gradientAnimation {
+    0% { background: linear-gradient(to right, #00c6ff, #0072ff); }
+    50% { background: linear-gradient(to right, #f5af19, #f12711); }
+    100% { background: linear-gradient(to right, #00c6ff, #0072ff); }
+}
+
+/* Quiz container styling */
 #quiz-container {
     text-align: center;
-    width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    width: 350px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    animation: slideUp 0.6s ease-out;
 }
 
+/* Animation for sliding the quiz container */
+@keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Question styling */
 #question {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #333;
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect */
 }
 
+/* Fade-in animation for text */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Option button styling */
 .option-btn {
     display: block;
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
+    padding: 15px;
+    margin: 10px 0;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 1.1em;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Hover effects for option buttons */
 .option-btn:hover {
     background-color: #0056b3;
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Hover effects when option is clicked */
+.option-btn:active {
+    transform: scale(0.98); /* Slight shrink when clicked */
+}
+
+/* Next button styling */
 #next-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
+    margin-top: 30px;
+    padding: 12px 25px;
     background-color: #28a745;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 1.2em;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Hover effect for next button */
 #next-btn:hover {
     background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Button animation */
+#next-btn:active {
+    transform: scale(0.98);
+}
+
+/* Result text styling */
+#result {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #555;
+    animation: slideIn 0.5s ease-in-out; /* Slide-in effect for result */
+}
+
+/* Slide-in animation for result text */
+@keyframes slideIn {
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
 }
