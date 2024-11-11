@@ -22,24 +22,39 @@ function displayQuestion() {
     const optionButtons = document.querySelectorAll(".option-btn");
     optionButtons.forEach((btn, index) => {
         btn.innerText = questionObj.options[index];
+        // Set correct answer in data attribute
         btn.dataset.correct = (questionObj.options[index] === questionObj.answer).toString();
+        // Enable the buttons for answering
+        btn.disabled = false;
     });
+
+    // Clear any previous result
+    document.getElementById("result").innerText = "";
 }
 
 function checkAnswer(selectedOptionIndex) {
     const selectedOption = document.querySelectorAll(".option-btn")[selectedOptionIndex];
     const resultText = document.getElementById("result");
 
-    // Check if the selected option is correct
+    // Show the correct answer message
     if (selectedOption.dataset.correct === "true") {
         resultText.innerText = "Correct!";
     } else {
         resultText.innerText = "Incorrect, try again.";
     }
+
+    // Disable buttons after answer is selected
+    const optionButtons = document.querySelectorAll(".option-btn");
+    optionButtons.forEach(button => button.disabled = true);
+
+    // Auto-refresh to the next question after a delay
+    setTimeout(() => {
+        nextQuestion();
+    }, 2000); // Delay of 2 seconds before loading the next question
 }
 
 function nextQuestion() {
-    document.getElementById("result").innerText = "";
+    document.getElementById("result").innerText = "";  // Clear result text
     currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;  // Loop back to the first question after the last
     displayQuestion();
 }
