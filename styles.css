@@ -6,15 +6,9 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #ff8c00, #f2f2f2); /* New gradient background */
-    animation: gradientAnimation 10s ease infinite; /* Moving gradient effect */
-}
-
-/* Animating background gradient */
-@keyframes gradientAnimation {
-    0% { background: linear-gradient(to right, #ff8c00, #f2f2f2); }
-    50% { background: linear-gradient(to right, #ff0080, #ff8c00); }
-    100% { background: linear-gradient(to right, #ff8c00, #f2f2f2); }
+    background-color: #f0f0f0; /* Solid background color */
+    /* Alternatively, if you prefer the gradient, use this: */
+    /* background: linear-gradient(to right, #ff8c00, #f2f2f2); */
 }
 
 /* Quiz container styling */
@@ -32,12 +26,6 @@ body {
     align-items: center;
 }
 
-/* Animation for sliding the quiz container */
-@keyframes slideUp {
-    0% { transform: translateY(30px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
-
 /* Question styling */
 #question {
     font-family: 'Arial', sans-serif;
@@ -45,21 +33,17 @@ body {
     font-weight: bold;
     margin-bottom: 25px;
     color: #2c3e50;
-    animation: fadeIn 1s ease-in-out; /* Fade-in effect */
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Fade-in animation for text */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Heading Styling - Center it in the middle */
+/* Heading Styling */
 h1 {
-    font-size: 2em;
-    font-family: 'Arial', sans-serif;
+    font-size: 2.5em; /* Increased size for better visibility */
+    font-family: 'Poppins', sans-serif; /* New stylish font */
     color: #2c3e50;
     margin-bottom: 20px;
+    text-transform: uppercase; /* Makes the heading stand out */
+    letter-spacing: 2px; /* Adds a slight letter spacing */
 }
 
 /* Option button styling */
@@ -68,7 +52,7 @@ h1 {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
-    background-color: #3498db; /* New color */
+    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 8px;
@@ -80,19 +64,14 @@ h1 {
 /* Hover effects for option buttons */
 .option-btn:hover {
     background-color: #2980b9;
-    transform: scale(1.05); /* Slight zoom effect */
-}
-
-/* Hover effects when option is clicked */
-.option-btn:active {
-    transform: scale(0.98); /* Slight shrink when clicked */
+    transform: scale(1.05);
 }
 
 /* Next button styling */
 #next-btn {
     margin-top: 30px;
     padding: 12px 25px;
-    background-color: #e67e22; /* New color */
+    background-color: #e67e22;
     color: white;
     border: none;
     border-radius: 8px;
@@ -101,27 +80,10 @@ h1 {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Hover effect for next button */
-#next-btn:hover {
-    background-color: #d35400;
-    transform: scale(1.05);
-}
-
-/* Button animation */
-#next-btn:active {
-    transform: scale(0.98);
-}
-
 /* Result text styling */
 #result {
     font-size: 1.2em;
     margin-top: 20px;
     color: #555;
-    animation: slideIn 0.5s ease-in-out; /* Slide-in effect for result */
-}
-
-/* Slide-in animation for result text */
-@keyframes slideIn {
-    0% { transform: translateX(100px); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
+    animation: slideIn 0.5s ease-in-out;
 }
