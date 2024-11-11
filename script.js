@@ -28,6 +28,9 @@ function displayQuestion() {
         btn.disabled = false;
     });
 
+    // Disable the Next button initially
+    document.getElementById("next-btn").disabled = true;
+
     // Clear any previous result
     document.getElementById("result").innerText = "";
 }
@@ -47,10 +50,8 @@ function checkAnswer(selectedOptionIndex) {
     const optionButtons = document.querySelectorAll(".option-btn");
     optionButtons.forEach(button => button.disabled = true);
 
-    // Auto-refresh to the next question after a delay
-    setTimeout(() => {
-        nextQuestion();
-    }, 2000); // Delay of 2 seconds before loading the next question
+    // Enable the Next Question button after answering
+    document.getElementById("next-btn").disabled = false;
 }
 
 function nextQuestion() {
