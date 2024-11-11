@@ -6,7 +6,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #ffffff, #f0f0f0); /* White to light grey gradient */
+    background: linear-gradient(45deg, #ff6f61, #6a11cb, #2575fc); /* Fix color gradient (multiple colors) */
+    background-attachment: fixed; /* Fixed gradient background */
 }
 
 /* Quiz container styling */
