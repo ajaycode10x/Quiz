@@ -1,4 +1,3 @@
-
 let questions = [];
 let currentQuestionIndex = 0;
 
@@ -8,21 +7,30 @@ fetch('questions.json')
     .then(data => {
         questions = data;
         displayQuestion();
+    })
+    .catch(error => {
+        console.error('Error fetching questions:', error);
     });
 
 function displayQuestion() {
+    if (questions.length === 0) return;
+
     const questionObj = questions[currentQuestionIndex];
     document.getElementById("question").innerText = questionObj.question;
+
+    // Get all option buttons and display options
     const optionButtons = document.querySelectorAll(".option-btn");
     optionButtons.forEach((btn, index) => {
         btn.innerText = questionObj.options[index];
-        btn.dataset.correct = questionObj.options[index] === questionObj.answer;
+        btn.dataset.correct = (questionObj.options[index] === questionObj.answer).toString();
     });
 }
 
 function checkAnswer(selectedOptionIndex) {
     const selectedOption = document.querySelectorAll(".option-btn")[selectedOptionIndex];
     const resultText = document.getElementById("result");
+
+    // Check if the selected option is correct
     if (selectedOption.dataset.correct === "true") {
         resultText.innerText = "Correct!";
     } else {
@@ -32,6 +40,6 @@ function checkAnswer(selectedOptionIndex) {
 
 function nextQuestion() {
     document.getElementById("result").innerText = "";
-    currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+    currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;  // Loop back to the first question after the last
     displayQuestion();
 }
