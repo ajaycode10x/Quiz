@@ -6,9 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0; /* Solid background color */
-    /* Alternatively, if you prefer the gradient, use this: */
-    /* background: linear-gradient(to right, #ff8c00, #f2f2f2); */
+    background: linear-gradient(to right, #ffffff, #f0f0f0); /* White to light grey gradient */
 }
 
 /* Quiz container styling */
@@ -16,7 +14,7 @@ body {
     text-align: center;
     width: 350px;
     padding: 30px;
-    background-color: #ffffff;
+    background-color: #ffffff; /* White background for quiz container */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     animation: slideUp 0.6s ease-out;
